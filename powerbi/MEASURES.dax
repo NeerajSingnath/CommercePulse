@@ -1,0 +1,43 @@
+// COMMERCEPULSE | Add these as measures in Power BI Desktop.
+// Tables: fact_orders, fact_items, dim_customers, dim_products, dim_date.
+// Numeric flags is_delivered and is_late are 1/0. All currency in BRL.
+
+Merchandise GMV = SUM(fact_orders[gmv_brl])
+
+Category GMV = SUM(fact_items[gmv_brl])
+
+All Orders = DISTINCTCOUNT(fact_orders[order_id])
+
+Delivered Orders = SUM(fact_orders[is_delivered])
+
+Average Order Value = DIVIDE([Merchandise GMV], [Delivered Orders])
+
+Unique Customers = DISTINCTCOUNT(fact_orders[customer_unique_id])
+
+Late Orders = SUM(fact_orders[is_late])
+
+Late Delivery % = DIVIDE([Late Orders], [Delivered Orders])
+
+On-Time Delivery % = 1 - [Late Delivery %]
+
+Average Review Score = AVERAGE(fact_orders[review_score])
+
+Average Delivery Days = CALCULATE(AVERAGE(fact_orders[delivery_days]), fact_orders[is_delivered] = 1)
+
+Average Days Late = CALCULATE(AVERAGE(fact_orders[delay_days]), fact_orders[is_late] = 1)
+
+Late Order Review = CALCULATE(AVERAGE(fact_orders[review_score]), fact_orders[is_late] = 1)
+
+On-Time Order Review = CALCULATE(AVERAGE(fact_orders[review_score]), fact_orders[is_late] = 0, fact_orders[is_delivered] = 1)
+
+// CUSTOMER SEGMENTS: these are historical lifetime figures, NOT recalculated for month filters.
+Repeat Customer Share (All Time) =
+VAR RepeatCustomers = COUNTROWS(FILTER(ALL(dim_customers), dim_customers[lifetime_delivered_orders] >= 2))
+VAR AllCustomers = COUNTROWS(ALL(dim_customers))
+RETURN DIVIDE(RepeatCustomers, AllCustomers)
+
+Customer Lifetime GMV (All Time) = SUM(dim_customers[lifetime_gmv_brl])
+
+// For product-category visuals, use [Category GMV] with dim_products[category].
+// Category filters do not flow back to the order table because relationships are single-direction.
+// For other pages, use [Merchandise GMV] sourced from fact_orders.

@@ -1,0 +1,11 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+.env
+# Keep lightweight demo assets in releases if desired, not typically in Git history:
+data/raw/*.csv
+data/processed/*.csv
+data/powerbi/*.csv
+data/*.sqlite
+models/*.joblib

@@ -1,0 +1,26 @@
+{
+  "dataset_kind": "OLIST ORIGINAL",
+  "raw_rows": {
+    "orders": 99441,
+    "customers": 99441,
+    "items": 112650,
+    "payments": 103886,
+    "reviews": 99224,
+    "products": 32951,
+    "translation": 71
+  },
+  "processed_rows": {
+    "fact_orders.csv": 99441,
+    "fact_items.csv": 112650,
+    "dim_customers.csv": 96096,
+    "dim_products.csv": 32951,
+    "dim_date.csv": 774
+  },
+  "unique_order_ids": 99441,
+  "duplicate_order_ids": 0,
+  "orphan_item_orders": 0,
+  "missing_customer_share_pct": 0.0,
+  "missing_review_share_pct": 0.7723172534467675,
+  "delivered_orders": 96470,
+  "order_gmv_matches_item_gmv": true
+}

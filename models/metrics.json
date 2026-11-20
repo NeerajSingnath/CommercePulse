@@ -1,0 +1,32 @@
+{
+  "training_examples": 77176,
+  "test_examples": 19294,
+  "train_late_rate": 0.08817508033585571,
+  "test_late_rate": 0.05291800559759511,
+  "roc_auc": 0.7233233707101882,
+  "average_precision": 0.11334076857148315,
+  "precision_at_05": 0.09190182722456482,
+  "recall_at_05": 0.8325171400587659,
+  "f1_at_05": 0.1655306718597858,
+  "confusion_matrix": [
+    [
+      9874,
+      8399
+    ],
+    [
+      171,
+      850
+    ]
+  ],
+  "temporal_test_start": "2018-05-26 18:18:03",
+  "temporal_test_end": "2018-08-29 15:00:37",
+  "target": "Late delivery among orders known to be delivered (historical retrospective evaluation)",
+  "excluded_leakage_features": [
+    "delivery_days",
+    "delay_days",
+    "delivered_at",
+    "review_score",
+    "is_late"
+  ],
+  "caveat": "Historical test only; not a live forecasting or causality claim."
+}

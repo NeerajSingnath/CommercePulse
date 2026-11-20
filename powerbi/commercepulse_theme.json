@@ -1,0 +1,10 @@
+{
+  "name": "CommercePulse Dark Executive",
+  "dataColors": ["#13B5A6", "#4F8CFF", "#7C5CFF", "#F59E0B", "#FB7185", "#80E0D4"],
+  "background": "#0B1120",
+  "foreground": "#F3F6FD",
+  "tableAccent": "#13B5A6",
+  "good": "#13B5A6",
+  "neutral": "#F59E0B",
+  "bad": "#FB7185"
+}

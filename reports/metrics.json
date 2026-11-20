@@ -1,0 +1,14 @@
+{
+  "dataset_kind": "OLIST ORIGINAL",
+  "delivered_orders": 96470,
+  "gross_merchandise_value_brl": 13220248.93,
+  "aov_ex_shipping_brl": 137.04,
+  "unique_customers": 96096,
+  "late_delivery_rate_pct": 8.11,
+  "average_review_score": 4.16,
+  "repeat_buyer_share_pct": 2.91,
+  "review_on_time": 4.29,
+  "review_late": 2.57,
+  "top_category": "Health Beauty",
+  "top_state": "SP"
+}
